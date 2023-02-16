@@ -1,4 +1,5 @@
 import header from "../components/header"
+import intro from "../pages/intro"
 
 // const home = () => {
 //     return `
@@ -6,7 +7,8 @@ import header from "../components/header"
 // }
 function home() {
     return `
-        ${header()}
+        ${header}
+        ${intro}
     `
 }
 

@@ -18,6 +18,9 @@ const header = () => {
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" data-navigo href="/contact">Contact</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" data-navigo href="/projects">Projects</a>
+                    </li>
                 </ul>
             </div>
         </nav>
