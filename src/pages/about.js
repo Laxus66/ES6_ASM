@@ -9,7 +9,7 @@ const about = () => {
         <p class="text-center"></p>
         <div class="about_main row">
             <div class="about_main_left col-md-3 col-sm-12">
-                <img class="w-100" src="./imgs/about_img.jpg" alt="">
+                <img class="w-100" src="${About[0].img}" alt="">
                 <p class="font-italic">"${About[0].title}"</p>
             </div>
             <div class="about_main_left row col-md-9 col-sm-12">

@@ -27,14 +27,14 @@ const Login = () => {
                                               placeholder="Your Password" id="logpass" autocomplete="off">
                                           <i class="input-icon uil uil-lock-alt"></i>
                                       </div>
-                                      <button type="submit" class="btn mt-4">submit</button>
+                                      <button type="submit" class="btn mt-4"><a class="text-decoration-none text-dark" href="/admin">Login</button>
                                       <p class="mb-0 mt-4 text-center"><a href="#0" class="link">Forgot your password?</a></p>
                                   </form>
                               </div>
                           </div>
                           <div class="card-back">
                               <div class="center-wrap">
-                                  <form action="/" class="section text-center">
+                                  <form action="/admin" class="section text-center">
                                       <h4 class="mb-4 pb-3">Sign Up</h4>
                                       <div class="form-group">
                                           <input type="text" name="logname" class="form-style"
@@ -51,7 +51,7 @@ const Login = () => {
                                               placeholder="Your Password" id="logpass" autocomplete="off">
                                           <i class="input-icon uil uil-lock-alt"></i>
                                       </div>
-                                      <button type="submit" class="btn mt-4">submit</button>
+                                      <button type="submit"  class="btn mt-4">submit</button>
                                   </form>
                               </div>
                           </div>

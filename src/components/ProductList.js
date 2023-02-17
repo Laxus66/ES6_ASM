@@ -31,7 +31,7 @@ const ProductList = () => {
                             <td>${Product.nameProject}</td>
                             <td><img src="${Product.imgs}" width="25">${Product.developer}</td>
                             <td>${Product.deadline}</td>
-                            <td class="green"><i class="${Product.status}">✅</i></td>
+                            <td class="green">${Product.status}</td>
                         </tr>
                     </tbody>
                 </table>
