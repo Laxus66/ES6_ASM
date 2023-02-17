@@ -1,7 +1,10 @@
+import header from "../components/header"
 import ProductList from "../components/ProductList"
-import { Projects } from "../data"
+import { Projects } from "../../db.json"
 const projects = () => {
-    return `<div class="container mt-5">
+    return `
+    ${header}
+    <div class="container mt-5">
                 <div class="d-flex justify-content-between">
                     <div class="d-flex">
                         <h3 class="font-weight-bold project color-main">Project</h3>

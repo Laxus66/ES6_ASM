@@ -13,13 +13,13 @@ const header = () => {
                         <a class="nav-link text-uppercase" data-navigo href="/about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-uppercase" data-navigo href="/work">Work</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link text-uppercase" data-navigo href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-uppercase" data-navigo href="/projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white bg-dark rounded text-uppercase" data-navigo href="/signin">Sign In</a>
                     </li>
                 </ul>
             </div>

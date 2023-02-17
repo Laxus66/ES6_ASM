@@ -1,4 +1,4 @@
-import { Projects } from "../data"
+import { Projects } from "../../db.json"
 const ProductList = () => {
     return `<div class="row mb-5">
     ${Projects.map((Product) => { // for(i = 0; i<= Product.hashtags.length; i++){}
@@ -35,6 +35,10 @@ const ProductList = () => {
                         </tr>
                     </tbody>
                 </table>
+                <div class="float-right">
+                    <div class="btn btn-dark"><a class="text-decoration-none text-white" href="${Product.link}">Code</a></div>
+                    <div class="btn btn-dark"><a class="text-decoration-none text-white" href="/products/">Demo</a></div>
+                </div>
             </div>
         </div>
     </div>
