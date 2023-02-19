@@ -43,7 +43,7 @@ const ProductList = () => {
         </div>
     </div>
 </div>`
-    })}
+    }).join("")}
 </div>`
 }
 
