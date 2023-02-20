@@ -6,4 +6,4 @@ const work = () => {
     <div>Work</div`
 }
 
-export default work()
+export default work

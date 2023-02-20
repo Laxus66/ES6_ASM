@@ -64,4 +64,4 @@ const contact = () => {
     </div>`
 }
 
-export default contact()
+export default contact

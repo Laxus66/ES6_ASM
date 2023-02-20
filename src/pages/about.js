@@ -90,4 +90,4 @@ const about = () => {
     </div>`
 }
 
-export default about()
+export default about

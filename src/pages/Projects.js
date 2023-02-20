@@ -26,4 +26,4 @@ const projects = () => {
         </div>`
 }
 
-export default projects()
+export default projects

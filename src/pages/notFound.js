@@ -19,4 +19,4 @@ const notFound = () => {
 
 }
 
-export default notFound()
+export default notFound

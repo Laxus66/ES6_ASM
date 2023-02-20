@@ -1,6 +1,42 @@
+// import { formToJSON } from "axios"
 import { Projects, user } from "../../../db.json"
+import { getProjects, deleteProject } from "../../api/project"
+import { useEffect, useState } from "../../lib/"
 const admin = () => {
+    const [data, setData] = useState([])
 
+    useEffect(() => {
+        (async () => {
+            try {
+                setData(await getProjects());
+            } catch (error) {
+                console.log(error);
+            }
+        })()
+
+    }, [])
+
+    useEffect(() => {
+        const btns = document.querySelectorAll(".btn-remove")
+        // console.log(btns);
+        for (let btn of btns) {
+            btn.addEventListener("click", async function () {
+
+                const id = this.dataset.id;
+                // console.log(id);
+                const confirm = window.confirm('Bạn có chắc chắn muốn xóa hay không?');
+                if (confirm) {
+                    try {
+                        await deleteProject(id);
+                        const newProject = data.filter((project) => project.id !== +id);
+                        setData(newProject)
+                    } catch {
+                        console.log(error);
+                    }
+                }
+            })
+        }
+    })
 
     return `<div class="d-flex flex-column flex-lg-row h-lg-full bg-surface-secondary"> <!-- Vertical Navbar -->
     <nav class="navbar show navbar-vertical h-lg-screen navbar-expand-lg px-0 py-3 navbar-light bg-white border-bottom border-bottom-lg-0 border-end-lg"
@@ -40,7 +76,7 @@ const admin = () => {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="/admin/projects">
                             <i class="bi bi-bar-chart"></i>Projects
                             <span
                                 class="badge bg-soft-primary text-primary rounded-pill d-inline-flex align-items-center ms-auto">${Projects.length}</span>
@@ -72,8 +108,11 @@ const admin = () => {
         <main class="py-6 bg-surface-secondary">
             <div class="container-fluid"> <!-- Card stats -->
                 <div class="card shadow border-0 mb-7">
-                    <div class="card-header">
-                        <h5 class="mb-0">Hello ${user[0].name}</h5>
+                    <div class="row card-header">
+                        <h5 class="mb-0 col-6">Hello ${user[0].name}</h5>
+                        <a class="justify-content-end d-flex col-6" href="/admin/add">
+                            <button class="justify-content-end btn btn-dark">ADD</button>
+                        </a>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-hover table-nowrap">
@@ -88,7 +127,7 @@ const admin = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                            ${Projects.map((project, index) => {
+                            ${data.map((project, index) => {
         return `<tr>
                                 <td>${index + 1}</td>
                                 <td>
@@ -109,7 +148,7 @@ const admin = () => {
                                     </span>
                                 </td>
                                 <td class="text-end">
-                                    <a href="#" class="btn btn-sm btn-neutral">Edit</a>
+                                    <a href="/admin/${project.id}/edit" class="btn btn-sm btn-neutral">Edit</a>
                                     <button type="button" data-id="${project.id}"
                                         class="btn btn-remove btn-sm btn-square btn-neutral text-danger-hover">
                                         <i class="bi bi-trash"></i>
@@ -136,4 +175,4 @@ const admin = () => {
   `
 }
 
-export default admin()
+export default admin
